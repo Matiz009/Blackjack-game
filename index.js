@@ -12,12 +12,7 @@ let btn = document.getElementById("btn");
 let btn_2 = document.getElementById("btn-2");
 
 btn.addEventListener("click", buttonClicked);
-btn_2.addEventListener("click", function() {
-    sum += newCard;
-    buttonClicked();
-    console.log("Draw a new card!");
-    alert("Draw a new card!");
-});
+btn_2.addEventListener("click", addNewCard);
 
 message_el = document.getElementById("message-el");
 
@@ -31,20 +26,27 @@ function buttonClicked() {
         console.log(message);
         message_el.textContent = message;
         sum_el.textContent = "Sum: " + sum;
-        cards_el.textContent = "Cards: " + cards[0] + " & " + cards[1];
+        cards_el.textContent = "Cards: " + cards;
     } else if (sum === 21) {
         message = "Woo hoo! You've got Blackjack! 🥳";
         console.log(message);
         hasBlackJack = true;
         message_el.textContent = message;
         sum_el.textContent = "Sum: " + sum;
-        cards_el.textContent = "Cards: " + cards[0] + " & " + cards[1];
+        cards_el.textContent = "Cards: " + cards;
     } else {
         message = "You're out of the game! 😭";
         console.log(message);
         isAlive = false;
         message_el.textContent = message;
         sum_el.textContent = "Sum: " + sum;
-        cards_el.textContent = "Cards: " + cards[0] + " & " + cards[1];
+        cards_el.textContent = "Cards: " + cards;
     }
+}
+
+function addNewCard() {
+    newCard = Math.floor(Math.random() * 10) + 1;
+    cards.push(newCard);
+    sum += newCard;
+    buttonClicked();
 }
