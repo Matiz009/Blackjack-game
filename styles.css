@@ -44,3 +44,24 @@ p {
     color: goldenrod;
     font-style: italic;
 }
+
+.btn-2 {
+    color: #d44e0b;
+    width: 40%;
+    height: 40%;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: rgb(223, 222, 220);
+    justify-content: center;
+    align-items: center;
+    border-style: outset;
+    margin-left: 30%;
+    border: none;
+    border-radius: 2px;
+}
+
+.btn-2:hover {
+    background-color: #5755db;
+    color: rgb(166, 91, 37);
+    font-style: italic;
+}
